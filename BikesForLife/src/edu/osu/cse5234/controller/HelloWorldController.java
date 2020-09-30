@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  
 @Controller
 @RequestMapping("/hello")
-public class HelloWorld {
+public class HelloWorldController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public void printHello(HttpServletRequest request, HttpServletResponse response) throws Exception {
