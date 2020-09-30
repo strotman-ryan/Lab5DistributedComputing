@@ -11,7 +11,7 @@ import edu.osu.cse5234.model.*;
 import java.util.ArrayList;
 public class Order {
 	//Private Properties
-	ArrayList<Item> items = new ArrayList<Item>();
+	private ArrayList<Item> items = new ArrayList<Item>();
 	
 	//Public Constructor
 	public Order() {
