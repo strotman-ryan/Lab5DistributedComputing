@@ -24,4 +24,47 @@ public class Purchase {
 		request.getSession().setAttribute("order", order);
 		return "redirect:/purchase/paymentEntry";
 	}
+	
+	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
+	public String paymentEntry(HttpServletRequest request, HttpServletResponse response) {
+		// ... instantiate and set payment object to display
+		return "PaymentEntryForm.jsp";
+	}
+	
+	@RequestMapping(path="/submitPayment", method = RequestMethod.POST)
+	public String submitPayment(@ModelAttribute("payment") PaymentInfo payment, HttpServletRequest request) {
+		request.getSession().setAttribute("payment", payment);
+		return "redirect:/purchase/shippingEntry";
+	}
+	
+	@RequestMapping(path="/shippingEntry", method = RequestMethod.GET)
+	public String shippingEntry(HttpServletRequest request, HttpServletResponse response) {
+		// ... instantiate and set shipping object to display
+		return "ShippingEntryForm.jsp";
+	}
+	
+	@RequestMapping(path = "/submitShipping", method = RequestMethod.POST)
+	public String submitShipping(@ModelAttribute("shippingInfo") ShippingInfo shippingInfo, HttpServletRequest request) {
+		request.getSession().setAttribute("shippingInfo", shippingInfo);
+		return "redirect:/purchase/viewOrder";
+	}
+	
+	@RequestMapping(path = "/viewOrder", method = RequestMethod.GET)
+	public String viewOrder(HttpServletRequest request, HttpServletResponse response) {
+		// ... instantiate and order objects object to display
+		return "ViewOrder.jsp";
+	}
+	
+	//TODO: IDK how this function is supposed to work
+	@RequestMapping(path = "/confirmOrder", method = RequestMethod.POST)
+	public String confirmOrder(@ModelAttribute("shippingInfo") ShippingInfo shippingInfo, HttpServletRequest request) {
+		return "redirect:/purchase/viewConfirmation";
+	}
+
+	@RequestMapping(path = "/viewConfirmation", method = RequestMethod.GET)
+	public String viewConfirmation(HttpServletRequest request, HttpServletResponse response) {
+		return "Confirmation.jsp";
+	}
+	
+	
 }
