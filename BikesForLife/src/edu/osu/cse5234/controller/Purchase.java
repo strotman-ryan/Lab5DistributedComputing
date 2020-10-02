@@ -20,23 +20,23 @@ public class Purchase {
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) {
 		Item item1 = new Item();
 		item1.setName("Driver");
-		item1.setPrice("$100.00");
+		item1.setPrice("100.00");
 		item1.setQuantity("5");
 		Item item2 = new Item();
 		item2.setName("Golden Golf Balls");
-		item2.setPrice("1 million dollars!");
+		item2.setPrice("1,000,000");
 		item2.setQuantity("1");
 		Item item3 = new Item();
 		item3.setName("4 Iron");
-		item3.setPrice("$56.01");
+		item3.setPrice("56.01");
 		item3.setQuantity("2");
 		Item item4 = new Item();
 		item4.setName("Professional lessons");
-		item4.setPrice("$1");
+		item4.setPrice("1");
 		item4.setQuantity("1,000");
 		Item item5 = new Item();
 		item5.setName("Gold Bag");
-		item5.setPrice("$43.52");
+		item5.setPrice("43.52");
 		item5.setQuantity("10");
 		List<Item> items = new ArrayList<Item>();
 		items.add(item1);
