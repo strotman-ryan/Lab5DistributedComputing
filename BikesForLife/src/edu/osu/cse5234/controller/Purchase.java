@@ -59,7 +59,7 @@ public class Purchase {
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
 	public String paymentEntry(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("payment", new PaymentInfo());
-		return "PaymentEntryForm.jsp";
+		return "PaymentEntryForm";
 	}
 	
 	@RequestMapping(path="/submitPayment", method = RequestMethod.POST)
@@ -72,7 +72,7 @@ public class Purchase {
 	public String shippingEntry(HttpServletRequest request, HttpServletResponse response) {
 		// ... instantiate and set shipping object to display
 		request.getSession().setAttribute("shippingInfo", new ShippingInfo());
-		return "ShippingEntryForm.jsp";
+		return "ShippingEntryForm";
 	}
 	
 	@RequestMapping(path = "/submitShipping", method = RequestMethod.POST)
@@ -84,7 +84,7 @@ public class Purchase {
 	@RequestMapping(path = "/viewOrder", method = RequestMethod.GET)
 	public String viewOrder(HttpServletRequest request, HttpServletResponse response) {
 		// ... instantiate and order objects object to display
-		return "ViewOrder.jsp";
+		return "ViewOrder";
 	}
 	
 	//TODO: IDK how this function is supposed to work
@@ -95,7 +95,7 @@ public class Purchase {
 
 	@RequestMapping(path = "/viewConfirmation", method = RequestMethod.GET)
 	public String viewConfirmation(HttpServletRequest request, HttpServletResponse response) {
-		return "Confirmation.jsp";
+		return "Confirmation";
 	}
 	
 	
