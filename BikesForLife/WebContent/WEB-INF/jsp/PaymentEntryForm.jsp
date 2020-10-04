@@ -37,7 +37,7 @@ table, td, th {
 			<td><form:input path="cardholderName" /></td>
 		</tr>
 		<tr>
-			<td colspan="3"><input type="submit" value="Purchase"></td>
+			<td colspan="4"><input type="submit" value="Submit"></td>
 		</tr>
 	</table>
 </form:form>
