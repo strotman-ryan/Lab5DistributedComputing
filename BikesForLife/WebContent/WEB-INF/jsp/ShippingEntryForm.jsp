@@ -41,7 +41,7 @@ table, td, th {
 			<td><form:input path="zip" /></td>
 		</tr>
 		<tr>
-			<td colspan="3"><input type="submit" value="Submit"></td>
+			<td colspan="6"><input type="submit" value="Submit"></td>
 		</tr>
 	</table>
 </form:form>

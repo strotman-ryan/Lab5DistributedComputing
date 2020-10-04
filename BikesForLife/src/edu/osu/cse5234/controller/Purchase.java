@@ -71,7 +71,7 @@ public class Purchase {
 	@RequestMapping(path="/shippingEntry", method = RequestMethod.GET)
 	public String shippingEntry(HttpServletRequest request, HttpServletResponse response) {
 		// ... instantiate and set shipping object to display
-		request.getSession().setAttribute("shippingInfo", new ShippingInfo());
+		request.setAttribute("shippingInfo", new ShippingInfo());
 		return "ShippingEntryForm";
 	}
 	
