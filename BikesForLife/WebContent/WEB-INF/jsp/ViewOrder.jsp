@@ -88,7 +88,6 @@ table, td, th {
 	</table>
 	
 	<br />
-	<br />
 	
 	<form:form method="post" action="confirmOrder">
 		<input type="submit" value="Confirm">
