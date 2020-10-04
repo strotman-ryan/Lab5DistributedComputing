@@ -19,15 +19,15 @@ public class Purchase {
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) {
 		Item item1 = new Item();
-		item1.setName("Driver");
+		item1.setName("Derailleur");
 		item1.setPrice("100.00");
 		item1.setQuantity("5");
 		Item item2 = new Item();
-		item2.setName("Golden Golf Balls");
+		item2.setName("Carbon Fiber Pedals");
 		item2.setPrice("1,000,000");
 		item2.setQuantity("1");
 		Item item3 = new Item();
-		item3.setName("4 Iron");
+		item3.setName("Handlebar");
 		item3.setPrice("56.01");
 		item3.setQuantity("2");
 		Item item4 = new Item();
@@ -35,7 +35,7 @@ public class Purchase {
 		item4.setPrice("1");
 		item4.setQuantity("1,000");
 		Item item5 = new Item();
-		item5.setName("Gold Bag");
+		item5.setName("Gold Chain");
 		item5.setPrice("43.52");
 		item5.setQuantity("10");
 		List<Item> items = new ArrayList<Item>();
