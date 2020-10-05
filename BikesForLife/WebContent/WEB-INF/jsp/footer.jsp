@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Bikes For Life</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 

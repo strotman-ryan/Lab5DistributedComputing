@@ -18,8 +18,15 @@ import edu.osu.cse5234.model.*;
 public class Home {
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String viewConfirmation(HttpServletRequest request, HttpServletResponse response) {
+	public String viewHome(HttpServletRequest request, HttpServletResponse response) {
 		return "Home";
 	}
-
+	@RequestMapping(path = "/about", method = RequestMethod.GET)
+	public String viewAbout(HttpServletRequest request, HttpServletResponse response) {
+		return "AboutUs";
+	}
+	@RequestMapping(path = "/contact", method = RequestMethod.GET)
+	public String viewContact(HttpServletRequest request, HttpServletResponse response) {
+		return "ContactUs";
+	}
 }
