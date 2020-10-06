@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<p> Copy Right by Bikes For Life </p>
+<p> Authors: Ryan Stromtan and Eli Vosniak </p>
 	
 </body>
 </html>
