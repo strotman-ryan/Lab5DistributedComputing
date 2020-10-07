@@ -8,5 +8,10 @@
 </head>
 <body>
 
+<jsp:include page="header.jsp" />
+<p>To contact Bikes For Life with any issues in the ordering process
+please contact Ryan Strotman at xxyy.#@osu.edu or Eli Vosniak at
+vosniak.2@osu.edu</p>
+<jsp:include page="footer.jsp" />
 </body>
 </html>

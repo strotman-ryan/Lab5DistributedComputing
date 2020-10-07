@@ -21,6 +21,8 @@ table, td, th {
 </head>
 <body>
 
+<jsp:include page="header.jsp" />
+
 <form:form modelAttribute="order" method="post" action="purchase/submitItems">
 
     <table>
@@ -44,7 +46,7 @@ table, td, th {
 
     </table>
 </form:form>
-
+<jsp:include page="footer.jsp" />
 
 </body>
 </html>

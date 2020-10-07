@@ -21,6 +21,8 @@ table, td, th {
 
 <body>
 
+<jsp:include page="header.jsp" />
+
 <form:form modelAttribute="payment" method="post" action="submitPayment">
 
 	<table>
@@ -41,6 +43,6 @@ table, td, th {
 		</tr>
 	</table>
 </form:form>
-
+<jsp:include page="footer.jsp" />
 </body>
 </html>

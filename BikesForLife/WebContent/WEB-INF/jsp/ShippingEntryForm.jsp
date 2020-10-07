@@ -21,6 +21,8 @@ table, td, th {
 
 <body>
 
+<jsp:include page="header.jsp" />
+
 <form:form modelAttribute="shippingInfo" method="post" action="submitShipping">
 
 	<table>
@@ -45,6 +47,6 @@ table, td, th {
 		</tr>
 	</table>
 </form:form>
-
+<jsp:include page="footer.jsp" />
 </body>
 </html>

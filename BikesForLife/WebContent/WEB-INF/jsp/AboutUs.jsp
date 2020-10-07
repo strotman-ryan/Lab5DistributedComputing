@@ -8,7 +8,12 @@
 </head>
 <body>
 
-<img src="Images/RyanHeadShot.JPG" alt="Ryan's pretty face">
+<jsp:include page="header.jsp" />
+<img src="Images/RyanHeadShot.JPG" alt="Ryan's pretty face">'
 
+<br />
+
+<img src="Images/EliHeadShot.jpg" alt="Eli's not so great face, tbh">
+<jsp:include page="footer.jsp" />
 </body>
 </html>

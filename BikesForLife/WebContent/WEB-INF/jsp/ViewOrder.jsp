@@ -21,6 +21,7 @@ table, td, th {
 
 <body>
 
+	<jsp:include page="header.jsp" />
 	<!-- Items Table -->
 	<table>
 		<tr>
@@ -92,5 +93,6 @@ table, td, th {
 	<form:form method="post" action="confirmOrder">
 		<input type="submit" value="Confirm">
 	</form:form>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
