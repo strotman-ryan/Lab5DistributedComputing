@@ -11,6 +11,9 @@
 	color:gray;
 	font-size:30px;
 }
+table {
+	border-spacing: 15px 0px;
+}
 </style>
 
 
@@ -22,7 +25,7 @@
 <table border=0>
 	<tr>
 		<td rowspan=3>
-		<img src="Images/RyanHeadShot.JPG" alt="Ryan's pretty face">'
+		<img src="Images/RyanHeadShot.JPG" alt="Ryan's pretty face" width="200px" height="200px">
 		</td>	
 		<td>
 			<div class="EmployeeName"> Name: Ryan Strotman </div>
@@ -40,12 +43,30 @@
 	</tr>
 </table>
 
-
-
-
+<br />
+<br />
 <br />
 
-<img src="Images/EliHeadShot.jpg" alt="Eli's not so great face, tbh">
+<table border=0>
+	<tr>
+		<td rowspan=3>
+		<img src="Images/EliHeadShot.jpg" alt="Eli's not so great face, tbh" width="200px" height="200px">
+		</td>	
+		<td>
+			<div class="EmployeeName"> Name: Eli Vosniak </div>
+		</td>	
+	</tr>
+	<tr>
+		<td > 
+			<div>Role: Board Chairman and Coffee Guy </div>
+		</td>
+	</tr>
+	<tr>
+		<td > 
+			<div>Education: B.S. in Computer Science and Engineering - OSU </div>
+		</td>
+	</tr>
+</table>
 <jsp:include page="footer.jsp" />
 </body>
 </html>
