@@ -8,5 +8,7 @@
 </head>
 <body>
 
+<img src="Images/RyanHeadShot.JPG" alt="Ryan's pretty face">
+
 </body>
 </html>
