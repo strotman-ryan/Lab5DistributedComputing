@@ -25,7 +25,7 @@ table {
 <table border=0>
 	<tr>
 		<td rowspan=3>
-		<img src="Images/RyanHeadShot.JPG" alt="Ryan's pretty face" width="200px" height="200px">
+		<img src="images/RyanHeadShot.JPG" alt="Ryan's pretty face" width="200px" height="200px">
 		</td>	
 		<td>
 			<div class="EmployeeName"> Name: Ryan Strotman </div>
@@ -50,7 +50,7 @@ table {
 <table border=0>
 	<tr>
 		<td rowspan=3>
-		<img src="Images/EliHeadShot.jpg" alt="Eli's not so great face, tbh" width="200px" height="200px">
+		<img src="images/EliHeadShot.jpg" alt="Eli's not so great face, tbh" width="200px" height="200px">
 		</td>	
 		<td>
 			<div class="EmployeeName"> Name: Eli Vosniak </div>
