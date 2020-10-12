@@ -2,3 +2,41 @@
 	color: blue;
 	font-family: "Comic Sans MS", sans-serif;
 }
+
+
+.navigation {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+	background-color:#0080ff;
+	position: fixed;
+	top:0;
+	width :100%;
+	border-right: 1px solid white;
+}
+
+.navigation:last-child{
+	border-right: none;'
+}
+
+.navigationElement{
+	float:left;
+}
+
+.navigationElement  .navigationLink{
+	display: block;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color:#80ffff;
+	text-decoration:none;
+	
+}
+
+.navigationLink:hover {
+	background-color: #1d04fb;
+	color:white;
+}

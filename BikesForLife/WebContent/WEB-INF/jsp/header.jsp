@@ -8,11 +8,12 @@
 </head>
 <body>
 	<h1 id="pageHeader">Bikes For Life</h1>
-	<nav>
-		<a href="/BikesForLife/">Home</a>
-		<a href="/BikesForLife/purchase">Purchase</a>
-		<a href="/BikesForLife/about">About Us</a>
-		<a href="/BikesForLife/contact">Contact Us</a>
-	</nav>
+	<ul class="navigation">
+		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/">Home</a></li>
+		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/purchase">Purchase</a></li>
+		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/about">About Us</a></li>
+		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/contact">Contact Us</a></li>
+	</ul>
+	<br/>
 </body>
 </html>
