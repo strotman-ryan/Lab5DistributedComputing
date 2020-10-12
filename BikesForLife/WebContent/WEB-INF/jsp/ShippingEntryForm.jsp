@@ -25,7 +25,7 @@ table, td, th {
 
 <form:form modelAttribute="shippingInfo" method="post" action="submitShipping">
 
-	<table>
+	<table class="entry-table">
 		<tr>
 			<th>Name</th>
 			<th>Address Line 1</th>

@@ -16,7 +16,7 @@
 
 <form:form modelAttribute="payment" method="post" action="submitPayment">
 
-	<table>
+	<table class="entry-table">
 		<tr>
 			<th>Credit Card Number</th>
 			<th>Expiration Date</th>

@@ -69,16 +69,16 @@ div.footer {
 }
 
 
-table {
+.entry-table {
 	border-collapse: collapse;
 	width 80%;
 }
 
-td, th {
+.entry-table td, .entry-table th {
 	border: 1px solid #80ffff;
 }
 
-th { 
+.entry-table th { 
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
@@ -86,7 +86,7 @@ th {
   color: white;
 }
 
-input {
+.entry-table input {
 	backgroung-color: gray;
 	
 }

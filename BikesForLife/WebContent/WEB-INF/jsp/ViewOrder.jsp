@@ -23,7 +23,7 @@ table, td, th {
 
 	<jsp:include page="header.jsp" />
 	<!-- Items Table -->
-	<table>
+	<table class="entry-table">
 		<tr>
 			<th colspan="3" align="center">Items</th>
 		</tr>
@@ -44,7 +44,7 @@ table, td, th {
 	<br />
 	
 	<!-- Payment Info Table -->
-	<table>
+	<table class="entry-table">
 		<tr>
 			<th colspan="4" align="center">Payment Information</th>
 		</tr>	
@@ -66,7 +66,7 @@ table, td, th {
 	<br />
 	
 	<!-- Shipping Info Table -->
-	<table>
+	<table class="entry-table">
 		<tr>
 			<th colspan="6" align="center">Shipping Information</th>
 		</tr>
