@@ -7,13 +7,16 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1 id="pageHeader">Bikes For Life</h1>
+	
 	<ul class="navigation">
 		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/">Home</a></li>
 		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/purchase">Purchase</a></li>
 		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/about">About Us</a></li>
 		<li class="navigationElement"><a class="navigationLink" href="/BikesForLife/contact">Contact Us</a></li>
 	</ul>
+	<br/>
+	<br/>
+	<div id="pageHeader">Bikes For Life</div>
 	<br/>
 </body>
 </html>

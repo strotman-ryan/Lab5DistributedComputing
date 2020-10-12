@@ -10,19 +10,20 @@
 
 <jsp:include page="header.jsp" />
 
-<h2>Vision</h2>
-<p> To out sell Amazon by 2022 in bikes </p>
+<div class="about-header">Vision</div>
+<div class="about-content"> To out sell Amazon by 2022 in bikes </div>
 
-<h2> business Strategy </h2>
-<p> To sell really good bikes at a low price</p>
+<div class="about-header"> Business Strategy </div>
+<div class="about-content"> To sell really good bikes at a low price</div>
 
-<h3> Featured Products </h3>
-<ul>
-<li> bike chains </li>
-<li> Helments </li>
-<li> 2020 Gold infused bike </li>	
-</ul>
-
+<div class="about-header"> Featured Products </div>
+<div class="about-content">
+	<ul style="margin:0;">
+		<li> bike chains </li>
+		<li> Helments </li>
+		<li> 2020 Gold infused bike </li>	
+	</ul>
+</div>
 
 <jsp:include page="footer.jsp" />
 </body>
