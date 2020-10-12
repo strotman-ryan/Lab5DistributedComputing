@@ -67,3 +67,27 @@ div.footer {
 	background-color:black;
 	width:100%;
 }
+
+
+table {
+	border-collapse: collapse;
+	width 80%;
+}
+
+td, th {
+	border: 1px solid #80ffff;
+}
+
+th { 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #0080ff;
+  color: white;
+}
+
+input {
+	backgroung-color: gray;
+	
+}
+

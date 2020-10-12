@@ -7,13 +7,7 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
 
-div.footer {
-	float:left;
-	padding:10px;
-	color: gray;
-	background-color:black;
-	width:100%;
-}
+
 
 
 </style>

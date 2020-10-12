@@ -8,15 +8,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Purchase Order Form</title>
-<style>
-table {
-  border-collapse: collapse;
-}
-
-table, td, th {
-  border: 1px solid black;
-}
-</style>
 
 </head>
 <body>
