@@ -3,8 +3,8 @@
 	<name>BikesForLife</name>
 	<comment></comment>
 	<projects>
-		<project>BikesForLife-InventoryManagement-EJBClient</project>
 		<project>BikesForLife-InventoryManagement-EJB</project>
+		<project>BikesForLife-InventoryManagement-EJBClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
