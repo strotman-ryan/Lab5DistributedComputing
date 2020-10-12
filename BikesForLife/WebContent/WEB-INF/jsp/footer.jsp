@@ -5,11 +5,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="css/style.css">
+<style>
+
+div.footer {
+	float:left;
+	padding:10px;
+	color: gray;
+	background-color:black;
+	width:100%;
+}
+
+
+</style>
 </head>
 <body>
 
-<p> Copy Right by Bikes For Life </p>
-<p> Authors: Ryan Stromtan and Eli Vosniak </p>
+
+<div >
+	<div class="footer"> Copy Right: Bikes For Life </div>
+	<div class="footer"> Authors: Ryan Stromtan and Eli Vosniak </div>
+</div>
 	
 </body>
 </html>

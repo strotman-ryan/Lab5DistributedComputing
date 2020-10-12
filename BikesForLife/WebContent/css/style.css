@@ -14,6 +14,7 @@
 	top:0;
 	width :100%;
 	border-right: 1px solid white;
+	horizontal-align:center;
 }
 
 .navigation:last-child{
@@ -39,4 +40,12 @@
 .navigationLink:hover {
 	background-color: #1d04fb;
 	color:white;
+}
+
+div.footer {
+	float:left;
+	padding:10px;
+	color: gray;
+	background-color:black;
+	width:100%;
 }
