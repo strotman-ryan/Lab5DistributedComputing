@@ -23,8 +23,10 @@ public class OrderProcessingServiceBean {
     }
     
     public String processOrder(Order order) {
-    	
-    	return "TODO";
+    	InventoryService inventoryService = ServiceLocator.getInventoryService();
+    	inventoryService.validateQuantity(order.getItems()); //Seems unnecessary
+    	inventoryService.updateInventory(order.getItems());
+    	return "123456789";
     }
     
     public boolean validateItemAvailability(Order order) {

@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import edu.osu.cse5234.util.*;
-import edu.osu.cse5234.business.view.Inventory;
-import edu.osu.cse5234.business.view.InventoryService;
-import edu.osu.cse5234.business.view.Item;
+import edu.osu.cse5234.business.*;
+import edu.osu.cse5234.business.view.*;
 import edu.osu.cse5234.model.*;
 @Controller
 @RequestMapping("/purchase")
@@ -31,8 +30,13 @@ public class Purchase {
 	
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
-		request.getSession().setAttribute("order", order);
-		return "redirect:/purchase/paymentEntry";
+		OrderProcessingServiceBean orderBean = ServiceLocator.getOrderProcessingService();
+		if (orderBean.validateItemAvailability(order)) {
+			request.getSession().setAttribute("order", order);
+			return "redirect:/purchase/paymentEntry";
+		}
+		//TODO send error message
+		return "redirect:/purchase/";
 	}
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
@@ -69,6 +73,10 @@ public class Purchase {
 	//TODO: IDK how this function is supposed to work
 	@RequestMapping(path = "/confirmOrder", method = RequestMethod.POST)
 	public String confirmOrder(@ModelAttribute("shippingInfo") ShippingInfo shippingInfo, HttpServletRequest request) {
+		OrderProcessingServiceBean orderBean = ServiceLocator.getOrderProcessingService();
+		Order order = (Order) request.getSession().getAttribute("order");
+		String confirmationNumber = orderBean.processOrder(order);
+		request.getSession().setAttribute("confNum", confirmationNumber);
 		return "redirect:/purchase/viewConfirmation";
 	}
 

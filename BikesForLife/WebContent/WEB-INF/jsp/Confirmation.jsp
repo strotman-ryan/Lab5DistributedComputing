@@ -12,7 +12,7 @@
 
 <p>Thank you for using Bike for Life </p>
 <h1>Where bikes last for a life time!</h1>
-<h3>Confirmation code: 123456789</h3>
+<h3>Confirmation code: <%= request.getSession().getAttribute("confNum") %></h3>
 
 <jsp:include page="footer.jsp" />
 
