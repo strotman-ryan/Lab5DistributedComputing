@@ -10,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import edu.osu.cse5234.util.*;
+import edu.osu.cse5234.business.view.Inventory;
+import edu.osu.cse5234.business.view.InventoryService;
 import edu.osu.cse5234.business.view.Item;
 import edu.osu.cse5234.model.*;
 @Controller
@@ -19,34 +21,10 @@ public class Purchase {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) {
-		Item item1 = new Item();
-		item1.setName("Derailleur");
-		item1.setPrice("100.00");
-		item1.setQuantity("5");
-		Item item2 = new Item();
-		item2.setName("Carbon Fiber Pedals");
-		item2.setPrice("1,000,000");
-		item2.setQuantity("1");
-		Item item3 = new Item();
-		item3.setName("Handlebar");
-		item3.setPrice("56.01");
-		item3.setQuantity("2");
-		Item item4 = new Item();
-		item4.setName("Professional lessons");
-		item4.setPrice("1");
-		item4.setQuantity("1,000");
-		Item item5 = new Item();
-		item5.setName("Gold Chain");
-		item5.setPrice("43.52");
-		item5.setQuantity("10");
-		List<Item> items = new ArrayList<Item>();
-		items.add(item1);
-		items.add(item2);
-		items.add(item3);
-		items.add(item4);
-		items.add(item5);
-		Order order = new Order();
-		order.setItems(items);
+		Order order = new Order();	
+		InventoryService inventoryService =  ServiceLocator.getInventoryService();
+		Inventory inventory =  inventoryService.getAvailableInventory();
+		order.setItems(inventory.getListOfItems());
 		request.setAttribute("order", order);
 		return "OrderEntryForm";
 	}
