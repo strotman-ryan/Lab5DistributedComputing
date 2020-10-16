@@ -15,7 +15,8 @@
 <jsp:include page="header.jsp" />
 
 <form:form modelAttribute="order" method="post" action="purchase/submitItems">
-
+	
+	<p style="color: red; font-size: 18px;"><%= request.getSession().getAttribute("error") %></p>
     <table class="entry-table">
       	<tr>
    			<th>Item</th>

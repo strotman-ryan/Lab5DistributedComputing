@@ -24,6 +24,7 @@ public class Purchase {
 		InventoryService inventoryService =  ServiceLocator.getInventoryService();
 		Inventory inventory =  inventoryService.getAvailableInventory();
 		order.setItems(inventory.getListOfItems());
+		request.getSession().setAttribute("error", "");
 		request.setAttribute("order", order);
 		return "OrderEntryForm";
 	}
@@ -35,8 +36,8 @@ public class Purchase {
 			request.getSession().setAttribute("order", order);
 			return "redirect:/purchase/paymentEntry";
 		}
-		//TODO send error message
-		return "redirect:/purchase/";
+		request.getSession().setAttribute("error", "Error, inventory unavailable. Please reenter quantities");
+		return "OrderEntryForm";
 	}
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
