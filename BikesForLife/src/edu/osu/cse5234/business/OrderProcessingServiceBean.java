@@ -3,7 +3,6 @@ package edu.osu.cse5234.business;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
-import edu.osu.cse5234.business.view.Inventory;
 import edu.osu.cse5234.business.view.InventoryService;
 import edu.osu.cse5234.model.Order;
 import edu.osu.cse5234.util.ServiceLocator;
