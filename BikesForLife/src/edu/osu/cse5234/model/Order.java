@@ -1,12 +1,19 @@
 package edu.osu.cse5234.model;
 
 
-import edu.osu.cse5234.business.view.Item;
 import java.util.ArrayList;
 import java.util.List;
 public class Order {
+	
 	//Private Properties
-	private List<Item> items = new ArrayList<Item>();
+	private List<LineItem> lineItems = new ArrayList<LineItem>();
+	private int id;
+	private String customerName;
+	private String emailAddress;
+	private ShippingInfo shippingInfo;
+	private PaymentInfo paymentInfo;
+	
+	
 	
 	//Public Constructor
 	public Order() {
@@ -14,11 +21,52 @@ public class Order {
 	}
 	
 	//Items getter and setter
-	public List<Item> getItems() {
-		return this.items;
+	public List<LineItem> getLineItems() {
+		return this.lineItems;
 	}
 	
-	public void setItems(List<Item> newItems) {
-		this.items = newItems;
+	public void setLineItems(List<LineItem> newLineItems) {
+		this.lineItems = newLineItems;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	public ShippingInfo getShippingInfo() {
+		return shippingInfo;
+	}
+
+	public void setShippingInfo(ShippingInfo shippingInfo) {
+		this.shippingInfo = shippingInfo;
+	}
+
+	public PaymentInfo getPaymentInfo() {
+		return paymentInfo;
+	}
+
+	public void setPaymentInfo(PaymentInfo paymentInfo) {
+		this.paymentInfo = paymentInfo;
+	}
+	
 }

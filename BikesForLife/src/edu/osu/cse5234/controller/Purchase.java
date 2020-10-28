@@ -23,7 +23,7 @@ public class Purchase {
 		Order order = new Order();	
 		InventoryService inventoryService =  ServiceLocator.getInventoryService();
 		Inventory inventory =  inventoryService.getAvailableInventory();
-		order.setItems(inventory.getListOfItems());
+		order.setLineItems(inventory.getListOfItems());
 		request.getSession().setAttribute("error", "");
 		request.setAttribute("order", order);
 		return "OrderEntryForm";
@@ -48,7 +48,8 @@ public class Purchase {
 	
 	@RequestMapping(path="/submitPayment", method = RequestMethod.POST)
 	public String submitPayment(@ModelAttribute("payment") PaymentInfo payment, HttpServletRequest request) {
-		request.getSession().setAttribute("payment", payment);
+		Order order = (Order) request.getSession().getAttribute("order");
+		order.setPaymentInfo(payment);
 		return "redirect:/purchase/shippingEntry";
 	}
 	
@@ -61,7 +62,8 @@ public class Purchase {
 	
 	@RequestMapping(path = "/submitShipping", method = RequestMethod.POST)
 	public String submitShipping(@ModelAttribute("shippingInfo") ShippingInfo shippingInfo, HttpServletRequest request) {
-		request.getSession().setAttribute("shippingInfo", shippingInfo);
+		Order order = (Order) request.getSession().getAttribute("order");
+		order.setShippingInfo(shippingInfo);
 		return "redirect:/purchase/viewOrder";
 	}
 	

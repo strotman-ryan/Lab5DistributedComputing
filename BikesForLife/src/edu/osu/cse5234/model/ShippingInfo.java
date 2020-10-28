@@ -18,6 +18,7 @@ public class ShippingInfo {
 	private String city;
 	private String state;
 	private String zip;
+	private int id;
 	
 	//Public Constructor
 	public ShippingInfo() {
@@ -76,6 +77,14 @@ public class ShippingInfo {
 
 	public void setZip(String zip) {
 		this.zip = zip;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

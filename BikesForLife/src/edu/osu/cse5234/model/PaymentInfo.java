@@ -16,6 +16,7 @@ public class PaymentInfo {
 	private String expirationDate;
 	private String cvvCode;
 	private String cardholderName;
+	private int id;
 	
 	//Public Constructor
 	public PaymentInfo() {
@@ -56,6 +57,14 @@ public class PaymentInfo {
 
 	public void setCardholderName(String cardholderName) {
 		this.cardholderName = cardholderName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }
