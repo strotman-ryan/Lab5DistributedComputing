@@ -4,4 +4,6 @@
 /BikesForLife-InventoryManagement-EJB/.classpath
 /BikesForLife-InventoryManagement-EJBClient/.classpath
 /BikesForLife/.classpath
-/BikesForLifeDB.trace
+BikesForLifeDB.trace.db
+/BikesForLife-InventoryManagement-EJB/.settings/
+BikesForLifeDB.mv.db
