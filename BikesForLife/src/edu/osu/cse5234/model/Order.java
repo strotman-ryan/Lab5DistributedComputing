@@ -3,14 +3,34 @@ package edu.osu.cse5234.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
+
+@Entity
+@Table(name="CUSTOMER_ORDER")
 public class Order {
 	
 	//Private Properties
-	private List<LineItem> lineItems = new ArrayList<LineItem>();
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="CUSTOMER_ORDER_ID_FK")
+	private List<LineItem> lineItems;
+	
+	@Id
+	@Column(name="ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name="CUSTOMER_NAME")
 	private String customerName;
+	
+	@Column(name="CUSTOMER_EMAIL")
 	private String emailAddress;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="SHIPPING_INFO_ID_FK")
 	private ShippingInfo shippingInfo;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="PAYMENT_INFO_ID_FK")
 	private PaymentInfo paymentInfo;
 	
 	

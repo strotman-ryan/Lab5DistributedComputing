@@ -1,21 +1,27 @@
 package edu.osu.cse5234.model;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.persistence.*;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import edu.osu.cse5234.model.*;
-import java.util.ArrayList;
-
+@Entity
+@Table(name="PAYMENT_INFO")
 public class PaymentInfo {
 	//Private Properties
+	
+	@Column(name="CARD_NUM")
 	private String creditCardNumber;
+	
+	@Column(name="EXP_DATE")
 	private String expirationDate;
+	
+	@Column(name="CVV")
 	private String cvvCode;
+	
+	@Column(name="HOLDER_NAME")
 	private String cardholderName;
+	
+	@Id
+	@Column(name="ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	//Public Constructor

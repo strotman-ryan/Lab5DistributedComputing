@@ -1,12 +1,25 @@
 package edu.osu.cse5234.model;
+import javax.persistence.*;
 
+@Entity
+@Table(name="CUSTOMER_ORDER_LINE_ITEM")
 public class LineItem {
 	
-	
+	@Id
+	@Column(name="ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name="ITEM_NUMBER")
 	private int itemNumber;
+	
+	@Column(name="ITEM_NAME")
 	private String name;
+	
+	//TODO: Has no column in table
 	private double price;
+	
+	@Column(name="QUANTITY")
 	private int quantity;
 	
 	public LineItem() {

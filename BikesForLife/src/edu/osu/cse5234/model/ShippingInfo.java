@@ -9,15 +9,39 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.osu.cse5234.model.*;
 import java.util.ArrayList;
+import javax.persistence.*;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="SHIPPING_INFO")
 public class ShippingInfo {
+	
+	
 	//Private Properties
+	//Does not have respective column in table
 	private String name;
+	
+	@Column(name="ADDRESS1")
 	private String addressLine1;
+	
+	@Column(name="ADDRESS2")
 	private String addressLine2;
+	
+	@Column(name="CITY")
 	private String city;
+	
+	@Column(name="STATE")
 	private String state;
+	
+	@Column(name="POSTAL_CODE")
 	private String zip;
+	
+	//TODO: Add COUNTRY and EMAIL Inputs that are in database
+	
+	@Id
+	@Column(name="ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	//Public Constructor
