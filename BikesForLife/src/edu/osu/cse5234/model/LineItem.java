@@ -17,6 +17,7 @@ public class LineItem {
 	private String name;
 	
 	//TODO: Has no column in table
+	@Transient
 	private double price;
 	
 	@Column(name="QUANTITY")

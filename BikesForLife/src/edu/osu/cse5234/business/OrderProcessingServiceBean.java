@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import edu.osu.cse5234.business.view.InventoryService;
 import edu.osu.cse5234.business.view.Item;
@@ -26,29 +28,49 @@ public class OrderProcessingServiceBean {
         // TODO Auto-generated constructor stub
     }
     
+    @PersistenceContext(unitName = "BikesForLife")
+	private EntityManager entityManager;
+    
     public String processOrder(Order order) {
-    	InventoryService inventoryService = ServiceLocator.getInventoryService();
-    	inventoryService.validateQuantity(lineItemsToItems(order.getLineItems())); //Seems unnecessary
-    	inventoryService.updateInventory(lineItemsToItems(order.getLineItems()));
+    	if (validateItemAvailability(order)) {
+    		entityManager.persist(order);
+    		entityManager.flush();
+    	}
     	return "123456789";
     }
     
     public boolean validateItemAvailability(Order order) {
-    	
-    	InventoryService inventoryService =  ServiceLocator.getInventoryService();
-		return inventoryService.validateQuantity(lineItemsToItems(order.getLineItems()));
+		for (int i = 0; i < order.getLineItems().size(); i++) {
+			LineItem currLineItem = order.getLineItems().get(i);
+			Item itemMatch = findItemMatch(currLineItem);
+			if (Integer.parseInt(itemMatch.getQuantity()) < currLineItem.getQuantity()) {
+				return false;
+			}
+		}
+		return true;
     }
     
-    private List<Item> lineItemsToItems(List<LineItem> lineItems) {
-    	List<Item> items = new ArrayList<Item>();
-    	for (int i = 0; i < lineItems.size(); i++) {
-    		Item tempItem = new Item();
-    		tempItem.setName(lineItems.get(i).getName());
-    		tempItem.setPrice(Double.toString(lineItems.get(i).getPrice()));
-    		tempItem.setQuantity(Integer.toString(lineItems.get(i).getQuantity()));
-    		tempItem.setItemNumber(lineItems.get(i).getItemNumber());
+    private Item findItemMatch(LineItem lineItem) {
+    	InventoryService inventoryService = ServiceLocator.getInventoryService();
+    	List<Item> items = inventoryService.getAvailableInventory().getListOfItems();
+    	Item returnItem = new Item();
+    	returnItem.setQuantity("0");
+    	System.out.println("Line Item: " + lineItem.getItemNumber());
+    	for (int i = 0; i < items.size(); i++) {
+    		System.out.println("Item: " + items.get(i).getItemNumber());
+    		if (items.get(i).getItemNumber() == lineItem.getItemNumber()) {
+    			returnItem = items.get(i);
+    		}
     	}
-    	return items;
+    	return returnItem;
     }
 
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+    
 }

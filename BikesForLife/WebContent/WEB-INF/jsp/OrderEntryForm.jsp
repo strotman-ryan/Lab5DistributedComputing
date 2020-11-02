@@ -28,6 +28,7 @@
 			<td><form:input path="lineItems[${loop.index}].name" readonly="true" /></td>
 			<td>$<form:input path="lineItems[${loop.index}].price" readonly="true" /></td>
 			<td><form:input path="lineItems[${loop.index}].quantity" /></td>
+			<td><form:hidden path="lineItems[${loop.index}].itemNumber" /></td>
 		</tr>
 	</c:forEach>
 

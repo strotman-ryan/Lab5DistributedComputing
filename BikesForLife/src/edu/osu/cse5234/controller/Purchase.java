@@ -32,6 +32,9 @@ public class Purchase {
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
 		OrderProcessingServiceBean orderBean = ServiceLocator.getOrderProcessingService();
+		for (int i = 0; i < order.getLineItems().size(); i++) {
+			System.out.println("Line Item Number XX: " + order.getLineItems().get(i).getItemNumber());
+		}
 		if (orderBean.validateItemAvailability(order)) {
 			request.getSession().setAttribute("order", order);
 			return "redirect:/purchase/paymentEntry";

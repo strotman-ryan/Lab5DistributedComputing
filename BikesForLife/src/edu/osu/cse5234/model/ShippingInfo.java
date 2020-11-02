@@ -20,6 +20,7 @@ public class ShippingInfo {
 	
 	//Private Properties
 	//Does not have respective column in table
+	@Transient
 	private String name;
 	
 	@Column(name="ADDRESS1")
