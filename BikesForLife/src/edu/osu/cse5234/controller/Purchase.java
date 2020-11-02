@@ -23,7 +23,7 @@ public class Purchase {
 		Order order = new Order();	
 		InventoryService inventoryService =  ServiceLocator.getInventoryService();
 		Inventory inventory =  inventoryService.getAvailableInventory();
-		order.setLineItems(inventory.getListOfItems());
+		order.setLineItems(itemsToLineItems(inventory.getListOfItems()));
 		request.getSession().setAttribute("error", "");
 		request.setAttribute("order", order);
 		return "OrderEntryForm";
@@ -87,6 +87,18 @@ public class Purchase {
 	public String viewConfirmation(HttpServletRequest request, HttpServletResponse response) {
 		return "Confirmation";
 	}
-	
+	private List<LineItem> itemsToLineItems(List<Item> items) {
+		ArrayList<LineItem> lineItems = new ArrayList<LineItem>();
+		for (int i = 0; i < items.size(); i++) {
+			LineItem tempItem = new LineItem();
+			tempItem.setName(items.get(i).getName());
+			double tempPrice = Double.parseDouble(items.get(i).getPrice());
+			tempItem.setPrice(tempPrice);
+			tempItem.setQuantity(0);
+			tempItem.setItemNumber(items.get(i).getItemNumber());
+			lineItems.add(tempItem);
+		}
+		return lineItems;
+	}
 	
 }
