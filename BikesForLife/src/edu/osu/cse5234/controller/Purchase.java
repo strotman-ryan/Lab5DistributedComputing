@@ -87,6 +87,7 @@ public class Purchase {
 	public String viewConfirmation(HttpServletRequest request, HttpServletResponse response) {
 		return "Confirmation";
 	}
+	
 	private List<LineItem> itemsToLineItems(List<Item> items) {
 		ArrayList<LineItem> lineItems = new ArrayList<LineItem>();
 		for (int i = 0; i < items.size(); i++) {

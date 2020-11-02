@@ -31,11 +31,11 @@ table, td, th {
 			<th>Item</th>
 			<th>Price</th>
 			<th>Quantity</th>
-		<c:forEach items="${order.items}" var="item" varStatus="loop">
+		<c:forEach items="${order.lineItems}" var="item" varStatus="loop">
 		<tr>
-			<td><jsp:text>${order.items[loop.index].name}</jsp:text></td>
-			<td>$<jsp:text>${order.items[loop.index].price}</jsp:text></td>
-			<td><jsp:text>${order.items[loop.index].quantity}</jsp:text></td>
+			<td><jsp:text>${order.lineItems[loop.index].name}</jsp:text></td>
+			<td>$<jsp:text>${order.lineItems[loop.index].price}</jsp:text></td>
+			<td><jsp:text>${order.lineItems[loop.index].quantity}</jsp:text></td>
 		</tr>
 		</c:forEach>
 	</table>
