@@ -55,10 +55,10 @@ table, td, th {
 			<th>Cardholder Name</th>
 		</tr>
 		<tr>
-			<td><jsp:text>${payment.creditCardNumber}</jsp:text></td>
-			<td><jsp:text>${payment.expirationDate}</jsp:text></td>
-			<td><jsp:text>${payment.cvvCode}</jsp:text></td>
-			<td><jsp:text>${payment.cardholderName}</jsp:text></td>
+			<td><jsp:text>${order.paymentInfo.creditCardNumber}</jsp:text></td>
+			<td><jsp:text>${order.paymentInfo.expirationDate}</jsp:text></td>
+			<td><jsp:text>${order.paymentInfo.cvvCode}</jsp:text></td>
+			<td><jsp:text>${order.paymentInfo.cardholderName}</jsp:text></td>
 		</tr>
 	</table>
 	
@@ -79,12 +79,12 @@ table, td, th {
 			<th>Zip</th>
 		</tr>
 		<tr>
-			<td><jsp:text>${shippingInfo.name}</jsp:text></td>
-			<td><jsp:text>${shippingInfo.addressLine1}</jsp:text></td>
-			<td><jsp:text>${shippingInfo.addressLine2}</jsp:text></td>
-			<td><jsp:text>${shippingInfo.city}</jsp:text></td>
-			<td><jsp:text>${shippingInfo.state}</jsp:text></td>
-			<td><jsp:text>${shippingInfo.zip}</jsp:text></td>
+			<td><jsp:text>${order.shippingInfo.name}</jsp:text></td>
+			<td><jsp:text>${order.shippingInfo.addressLine1}</jsp:text></td>
+			<td><jsp:text>${order.shippingInfo.addressLine2}</jsp:text></td>
+			<td><jsp:text>${order.shippingInfo.city}</jsp:text></td>
+			<td><jsp:text>${order.shippingInfo.state}</jsp:text></td>
+			<td><jsp:text>${order.shippingInfo.zip}</jsp:text></td>
 		</tr>
 	</table>
 	
