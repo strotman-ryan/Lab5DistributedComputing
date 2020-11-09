@@ -44,7 +44,7 @@ public class OrderProcessingServiceBean {
     	if (validateItemAvailability(order)) {
     		entityManager.persist(order);
     		entityManager.flush();
-    		sendOrderToShipping(order);
+    		//sendOrderToShipping(order);
     	}
     	return "123456789";
     }
