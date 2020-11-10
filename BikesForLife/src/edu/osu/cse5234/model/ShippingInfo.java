@@ -38,6 +38,9 @@ public class ShippingInfo {
 	@Column(name="POSTAL_CODE")
 	private String zip;
 	
+	@Column(name="EMAIL")
+	private String email;
+	
 	//TODO: Add COUNTRY and EMAIL Inputs that are in database
 	
 	@Id
@@ -102,6 +105,14 @@ public class ShippingInfo {
 
 	public void setZip(String zip) {
 		this.zip = zip;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public int getId() {

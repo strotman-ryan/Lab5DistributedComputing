@@ -1,10 +1,14 @@
 package edu.osu.cse5234.business;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.jms.*;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.persistence.EntityManager;
@@ -26,9 +30,18 @@ import edu.osu.cse5234.util.ServiceLocator;
  */
 @Stateless
 @LocalBean
+@Resource(name="jms/emailQCF", lookup="jms/emailQCF", type=ConnectionFactory.class)
 public class OrderProcessingServiceBean {
 	
 	private static String SHIPPING_URI="http://localhost:9080/FedEx/services/shipping";
+	
+	@Inject
+	@JMSConnectionFactory("java:comp/env/jms/emailQCF")
+	private JMSContext jmsContext;
+	
+	@Resource(lookup="jms/emailQ")
+	private Queue queue;
+	
 	
     /**
      * Default constructor. 
@@ -45,6 +58,7 @@ public class OrderProcessingServiceBean {
     		entityManager.persist(order);
     		entityManager.flush();
     		//sendOrderToShipping(order);
+    		notifyUser(order);
     	}
     	return "123456789";
     }
@@ -97,6 +111,14 @@ public class OrderProcessingServiceBean {
     	}
     	return returnQuantityFinder;
     }
+    private void notifyUser(Order order) {
+    	String message = order.getShippingInfo().getEmail() + ":" +       
+    			"Your order was successfully submitted. " +
+    			"You will hear from us when items are shipped. " +
+    			new Date();
+    	System.out.println("Sending message: " + message);
+    	jmsContext.createProducer().send(queue, message);
+    	System.out.println("Message Sent!");}
 
 	public EntityManager getEntityManager() {
 		return entityManager;
