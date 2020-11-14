@@ -22,15 +22,17 @@
 			<th>Expiration Date</th>
 			<th>CVV Code</th>
 			<th>Cardholder name</th>
+			<th>Email</th>
 		</tr>
 		<tr>
 			<td><form:input path="creditCardNumber" /></td>
 			<td><form:input path="expirationDate" /></td>
 			<td><form:input path="cvvCode" /></td>
 			<td><form:input path="cardholderName" /></td>
+			<td><form:input path="email"/></td>
 		</tr>
 		<tr>
-			<td colspan="4"><input type="submit" value="Submit"></td>
+			<td colspan="5"><input type="submit" value="Submit"></td>
 		</tr>
 	</table>
 </form:form>

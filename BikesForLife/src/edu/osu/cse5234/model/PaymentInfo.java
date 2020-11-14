@@ -10,6 +10,9 @@ public class PaymentInfo {
 	@Column(name="CARD_NUM")
 	private String creditCardNumber;
 	
+	@Column(name="EMAIL")
+	private String email;
+	
 	@Column(name="EXP_DATE")
 	private String expirationDate;
 	
@@ -27,6 +30,14 @@ public class PaymentInfo {
 	//Public Constructor
 	public PaymentInfo() {
 		
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	//Credit Card Number Getter and Setter

@@ -112,13 +112,14 @@ public class OrderProcessingServiceBean {
     	return returnQuantityFinder;
     }
     private void notifyUser(Order order) {
-    	String message = order.getShippingInfo().getEmail() + ":" +       
+    	String message = order.getPaymentInfo().getEmail() + ": " +       
     			"Your order was successfully submitted. " +
     			"You will hear from us when items are shipped. " +
     			new Date();
     	System.out.println("Sending message: " + message);
     	jmsContext.createProducer().send(queue, message);
-    	System.out.println("Message Sent!");}
+    	System.out.println("Message Sent!");
+	}
 
 	public EntityManager getEntityManager() {
 		return entityManager;
