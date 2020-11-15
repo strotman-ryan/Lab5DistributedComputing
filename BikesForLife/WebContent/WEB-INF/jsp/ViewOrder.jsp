@@ -53,12 +53,14 @@ table, td, th {
 			<th>Expiration Date</th>
 			<th>CVV Code</th>
 			<th>Cardholder Name</th>
+			<th>Email</th>
 		</tr>
 		<tr>
 			<td><jsp:text>${order.paymentInfo.creditCardNumber}</jsp:text></td>
 			<td><jsp:text>${order.paymentInfo.expirationDate}</jsp:text></td>
 			<td><jsp:text>${order.paymentInfo.cvvCode}</jsp:text></td>
 			<td><jsp:text>${order.paymentInfo.cardholderName}</jsp:text></td>
+			<td><jsp:text>${order.paymentInfo.email}</jsp:text></td>
 		</tr>
 	</table>
 	

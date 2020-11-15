@@ -19,11 +19,6 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="CUSTOMER_NAME")
-	private String customerName;
-	
-	@Column(name="CUSTOMER_EMAIL")
-	private String emailAddress;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="SHIPPING_INFO_ID_FK")
@@ -55,22 +50,6 @@ public class Order {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
 	}
 
 	public ShippingInfo getShippingInfo() {
