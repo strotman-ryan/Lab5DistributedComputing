@@ -116,8 +116,10 @@ public class OrderProcessingServiceBean {
     			"Your order was successfully submitted. " +
     			"You will hear from us when items are shipped. " +
     			new Date();
-    	System.out.println("Sending message: " + message);
+    	System.out.println("Sending messages: " + message);
     	jmsContext.createProducer().send(queue, message);
+    	jmsContext.createProducer().send(queue, message);
+    	System.out.println("Queue: " + queue);
     	System.out.println("Message Sent!");}
 
 	public EntityManager getEntityManager() {
